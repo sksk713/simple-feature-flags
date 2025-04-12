@@ -1,1 +1,1 @@
-# api-version-manager
+# simple-feature-flags
