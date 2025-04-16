@@ -26,6 +26,10 @@ dependencies {
     implementation("org.springframework:spring-context")
     implementation("org.springframework.boot:spring-boot-autoconfigure")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.2")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.18.2")
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    implementation("org.slf4j:slf4j-api:2.0.17")
 
     // 테스트 의존성
     testImplementation("org.springframework.boot:spring-boot-starter-test")
