@@ -59,6 +59,15 @@ publishing {
         }
     }
     repositories {
+        maven {
+            name = "GitHubPackages"
+            val repositoryOwner = System.getenv("GITHUB_REPOSITORY_OWNER") ?: "YOUR_GITHUB_USERNAME_OR_ORG"
+            url = uri("https://maven.pkg.github.com/$repositoryOwner/${rootProject.name}")
+            credentials {
+                username = System.getenv("GITHUB_USERNAME")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
         mavenLocal()
     }
 }
