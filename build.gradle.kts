@@ -7,6 +7,7 @@ plugins {
 
 val libraryArtifactId = "simple-flags-kotlin"
 val libraryVersion = "1.0.0"
+val libraryGroupId = "com.github.sksk713"
 
 java {
     toolchain {
@@ -55,6 +56,7 @@ publishing {
         create<MavenPublication>("maven") {
             artifactId = libraryArtifactId
             version = libraryVersion
+            groupId = libraryGroupId
             from(components["java"])
         }
     }
