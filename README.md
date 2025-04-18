@@ -35,12 +35,48 @@ Kotlin 및 Spring Boot 애플리케이션을 위한 경량 피처 플래그 라�
 ## 설정
 
 1.  **`feature_flags.json` 파일 생성:** 애플리케이션의 클래스패스 루트나 특정 경로에 `feature_flags.json` 파일을 생성합니다.
+- **JSON 파일 예시:**
+    ```json
+        {
+          "new-awesome-feature": true,
+          "experimental-feature-a": false
+        }
+    ```
 
-2.  **플래그 규칙 정의:**
-    JSON 파일에 피처 플래그와 그룹핑 규칙을 정의합니다.
+2. application.yml 파일에 다음과 같이 설정합니다.
+    ```yaml
+    simple:
+      flags:
+        location: file:/path/to/your/feature_flags.json
+        dynamic-reloading-enabled: true
+        reload-cron: "0 * * * * ?"
+        reload-interval-seconds: 20
     ```
-    추후 기능 개발 후, 추가 예정
-    ```
+   - location은 반드시 지정이 필요하고, 그 외의 설정은 선택 사항입니다.
 
 ## 사용 방법
-추후 작성
+Spring Boot 애플리케이션에서 `FeatureFlagService` 빈을 주입받아 사용합니다.
+
+```kotlin
+import org.simplefeatureflags.service.FeatureFlagService
+import org.springframework.stereotype.Service
+
+@Service
+class MyAwesomeService(
+    private val featureFlagService: FeatureFlagService
+) {
+
+    fun doSomething() {
+        if (featureFlagService.isEnabled("new-awesome-feature")) {
+            ...
+        } else {
+            ...
+        }
+    }
+
+    fun anotherMethod() {
+        if (featureFlagService.isDisabled("experimental-feature-a")) {
+            println("실험적 기능 a는 비활성화되어 있습니다.")
+        }
+    }
+}

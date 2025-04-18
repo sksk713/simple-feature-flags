@@ -1,4 +1,4 @@
-package org.innercircle.simplefeatureflags.service
+package org.simplefeatureflags.service
 
 interface FeatureFlagService {
     /**
