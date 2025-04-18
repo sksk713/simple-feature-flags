@@ -2,10 +2,13 @@ package org.innercircle.simplefeatureflags.autoconfigure
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import jakarta.annotation.PostConstruct
+import org.innercircle.simplefeatureflags.internal.DefaultFeatureFlagService
 import org.innercircle.simplefeatureflags.internal.FlagLoader
 import org.innercircle.simplefeatureflags.internal.FlagRegistry
 import org.innercircle.simplefeatureflags.internal.FlagReloader
+import org.innercircle.simplefeatureflags.service.FeatureFlagService
 import org.slf4j.LoggerFactory
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.boot.context.properties.EnableConfigurationProperties
@@ -25,18 +28,21 @@ class SimpleFlagsAutoConfiguration(
 
     @Bean
     @ConditionalOnMissingBean
+    @ConditionalOnBean(DefaultFeatureFlagService::class)
     internal fun simpleFlagsSystemClock(): Clock {
         return Clock.systemUTC()
     }
 
     @Bean
     @ConditionalOnMissingBean
+    @ConditionalOnBean(DefaultFeatureFlagService::class)
     internal fun flagRegistry(): FlagRegistry {
         return FlagRegistry()
     }
 
     @Bean
     @ConditionalOnMissingBean
+    @ConditionalOnBean(DefaultFeatureFlagService::class)
     internal fun flagLoader(): FlagLoader {
         return FlagLoader(resourceLoader, objectMapper)
     }
