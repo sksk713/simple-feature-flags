@@ -1,6 +1,6 @@
-package org.innercircle.simplefeatureflags.internal
+package org.simplefeatureflags.internal
 
-import org.innercircle.simplefeatureflags.autoconfigure.SimpleFlagsProperties
+import org.simplefeatureflags.autoconfigure.SimpleFlagsProperties
 import org.slf4j.LoggerFactory
 import org.springframework.scheduling.annotation.Scheduled
 import java.time.Clock

@@ -1,4 +1,4 @@
-package org.innercircle.simplefeatureflags.internal
+package org.simplefeatureflags.internal
 
 import java.util.concurrent.ConcurrentHashMap
 

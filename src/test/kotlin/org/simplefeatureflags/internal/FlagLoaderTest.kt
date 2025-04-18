@@ -1,4 +1,4 @@
-package org.innercircle.simplefeatureflags.internal
+package org.simplefeatureflags.internal
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.core.type.TypeReference
@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.mockito.kotlin.*
+import org.simplefeatureflags.internal.FlagLoader
 import org.springframework.core.io.Resource
 import org.springframework.core.io.ResourceLoader
 import java.io.ByteArrayInputStream

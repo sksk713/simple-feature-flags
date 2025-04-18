@@ -1,6 +1,6 @@
-package org.innercircle.simplefeatureflags.internal
+package org.simplefeatureflags.internal
 
-import org.innercircle.simplefeatureflags.service.FeatureFlagService
+import org.simplefeatureflags.service.FeatureFlagService
 
 /**
  * FeatureFlagService 인터페이스의 기본 내부 구현체.

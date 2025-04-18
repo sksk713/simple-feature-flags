@@ -1,4 +1,4 @@
-package org.innercircle.simplefeatureflags.autoconfigure
+package org.simplefeatureflags.autoconfigure
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 

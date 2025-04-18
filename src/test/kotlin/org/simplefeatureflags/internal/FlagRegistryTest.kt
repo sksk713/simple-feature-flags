@@ -1,8 +1,9 @@
-package org.innercircle.simplefeatureflags.internal
+package org.simplefeatureflags.internal
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.simplefeatureflags.internal.FlagRegistry
 
 internal class FlagRegistryTest {
 

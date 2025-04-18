@@ -1,4 +1,4 @@
-package org.innercircle.simplefeatureflags.internal
+package org.simplefeatureflags.internal
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.core.type.TypeReference

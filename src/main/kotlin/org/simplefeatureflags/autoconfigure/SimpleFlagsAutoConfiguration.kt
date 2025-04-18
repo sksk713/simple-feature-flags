@@ -1,12 +1,12 @@
-package org.innercircle.simplefeatureflags.autoconfigure
+package org.simplefeatureflags.autoconfigure
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import jakarta.annotation.PostConstruct
-import org.innercircle.simplefeatureflags.internal.DefaultFeatureFlagService
-import org.innercircle.simplefeatureflags.internal.FlagLoader
-import org.innercircle.simplefeatureflags.internal.FlagRegistry
-import org.innercircle.simplefeatureflags.internal.FlagReloader
-import org.innercircle.simplefeatureflags.service.FeatureFlagService
+import org.simplefeatureflags.internal.DefaultFeatureFlagService
+import org.simplefeatureflags.internal.FlagLoader
+import org.simplefeatureflags.internal.FlagRegistry
+import org.simplefeatureflags.internal.FlagReloader
+import org.simplefeatureflags.service.FeatureFlagService
 import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
