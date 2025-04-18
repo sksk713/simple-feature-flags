@@ -50,6 +50,7 @@ class SimpleFlagsAutoConfiguration(
     @Bean
     @ConditionalOnProperty(prefix = "simple.flags", name = ["dynamic-reloading-enabled"], havingValue = "true", matchIfMissing = true)
     @ConditionalOnMissingBean
+    @ConditionalOnBean(DefaultFeatureFlagService::class)
     internal fun flagReloader(flagLoader: FlagLoader, flagRegistry: FlagRegistry, clock: Clock): FlagReloader {
         return FlagReloader(properties, flagLoader, flagRegistry, clock)
     }
