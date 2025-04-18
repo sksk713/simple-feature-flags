@@ -48,6 +48,14 @@ class SimpleFlagsAutoConfiguration(
         return FlagReloader(properties, flagLoader, flagRegistry, clock)
     }
 
+    @Bean
+    @ConditionalOnMissingBean(FeatureFlagService::class)
+    internal fun simpleFlagsFeatureFlagService(flagRegistry: FlagRegistry): FeatureFlagService {
+        return DefaultFeatureFlagService(
+            flagRegistry
+        )
+    }
+
     @PostConstruct
     internal fun initializeFlags(flagLoader: FlagLoader, flagRegistry: FlagRegistry) {
         log.info("Initializing Simple Flags from location: {}", properties.location)
